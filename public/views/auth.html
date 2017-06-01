@@ -1,0 +1,24 @@
+<div class="col-xs-12 table loginform">
+    <div class="col-sm-6 col-xs-8 col-sm-offset-3 col-xs-offset-2">
+        <form>
+            <div class="col-xs-12" ng-show="!loginStatus">
+                <h4>Registration form
+            <span class="errorMessage text-center">{{errorMessage}}</span>
+
+                </h4>
+                <input type="text" ng-model="username" placeholder="login" class="col-xs-12 form-control">
+                <input type="password" ng-model="password" placeholder="password"
+                   class="col-xs-12 form-control ">
+            
+        		<button ng-click="login({username, password})" class="col-xs-6 btn btn-sm btn-default" ntype="submit">login</button>
+        		<button ng-click="registration({username, password})" class="col-xs-6 btn btn-sm btn-default"  type="submit">registration</button>
+        	</div>
+        	<div class="col-xs-12 navbar-text text-center" ng-show="loginStatus">
+                <h3><span class="nowrap">You login as:</span> <span class="nowrap">{{currentUser.username}}</span></h3>
+                <hr>
+                <a href="/chat"><h4>Go to chat!</h4></a>
+        		<button ng-click="logout()" class="col-xs-offset-3 col-xs-6 btn btn-sm btn-default" type="submit">log out</button>
+    		</div>
+        </form>
+    </div>
+</div>

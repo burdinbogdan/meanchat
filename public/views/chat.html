@@ -1,0 +1,52 @@
+<div class="container-fluid contMaxHeight chatBlock">
+    <div class="row contMaxHeight ">
+        <div class="col-sm-9 col-xs-12 contMaxHeight contextBlock">
+            <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="col-xs-12 navbar-fixed-top" ng-cloak>
+                    <p class="text-center"><span class="nowrap">Hello,</span> <b><span class="nowrap">{{currentUser.username}}</span></b>!</p>
+                </div>
+            </div>
+            <div class="contMaxHeight col-xs-12 table over col-sm-offset-1 " ng-cloak>
+                <ul class="col-sm-10 col-xs-12 col-sm-offset-3 over messagesArea ">
+                    <hr>
+                    <li ng-repeat="message in messages"><span class="mes {{currentUser.username==message.username?'curUserMes':''}} {{message.username=='chatBot'?'chatBotMes':''}}">{{message.date | date:'(HH:mm:ss)'}} <b>{{message.username}}</b>:
+                        {{message.message}}</span>
+                    </li>
+                    <div id="bottomAreaMessage"></div>
+                </ul>
+            </div>
+            <div class="navbar-fixed-bottom col-xs-12 col-sm-9">
+                <form class="input-group">
+                    <input type="text" class="form-control" placeholder="input your message"
+                           ng-model="textMessage">
+                <span class="input-group-btn">
+                    <button ng-click="sendMessage()" class="pull-right btn btn-default" type="submit">Send</button>
+                </span>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-sm-3 hidden-xs users contMaxHeight over">
+            <div class="col-xs-12" ng-cloak>
+                <hr>
+                <p class="text-center">Hello, <b><span>{{currentUser.username}}</span></b>!</p>
+                <hr>
+            </div>
+            <div class="col-xs-12 table" ng-cloak>
+                <h5 class="text-center">Users:</h5>
+                <ul>
+                    <li ng-repeat="user in users">{{user.username}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 hidden-sm hidden-md hidden-lg over navbar navbar-default users-sm {{isShow?'visible':'hidden'}} " ng-show="isShow" ng-cloak>
+            <ul>
+                <h5 class="text-center">Users:</h5>
+                <hr>
+                <li ng-repeat="user in users">{{user.username}}</li>
+            </ul>
+        </div>
+        <span class="hidden-sm hidden-md hidden-lg glyphicon glyphicon-list showUsers" ng-show="currentUser.username" aria-hidden="true" ng-click="showUsers()" ng-cloak></span>
+    </div>
+</div>

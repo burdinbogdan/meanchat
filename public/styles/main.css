@@ -1,0 +1,105 @@
+.contextBlock {
+    background-color: rgba(170, 170, 170, 0.02);
+    border-right: 1px solid #F0F0F0;
+}
+
+html {
+    height: 100%;
+    word-break: break-all;
+}
+
+.contMaxHeight {
+    /*margin: 0;*/
+    /*padding: 0;*/
+    height: 100%;
+    margin-bottom: 0px;
+}
+
+.messagesArea {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    height: 90%;
+}
+
+/* хром, сафари */
+.messagesArea::-webkit-scrollbar { width: 0; }
+
+/* ie 10+ */
+.messagesArea { -ms-overflow-style: none; }
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.messagesArea { overflow: -moz-scrollbars-none; }
+
+.mes {
+    display: inline-block;
+    border: 1px solid #F0F0F0;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 3px 10px;
+    background-color: rgba(170, 170, 170, 0.02);
+}
+
+.users {
+    min-height: 100%;
+}
+
+.table {
+    display: table;
+}
+
+.over {
+    overflow-y: auto;
+}
+
+.users-sm {
+    padding-top: 20px;
+    width: 70%;
+    height: 90%;
+    margin-top:20px ;
+    position: fixed;
+    background-color: #d0d0d0;
+    right: 0px;
+}
+
+.showUsers {
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: 25px;
+    position: fixed;
+    font-size: 200%;
+    opacity: 0.5;
+}
+
+p{
+    margin: 0px;
+}
+
+.loginform{
+    top: 15%;
+}
+
+.chatBlock{
+    overflow: hidden;
+}
+
+.curUserMes{
+    background-color: rgba(119, 138, 255, 0.15);
+}
+
+.chatBotMes{
+    font-style: italic;
+    color: #afafaf;
+}
+
+.errorMessage{
+    color: #FF0000;
+    font-size: 0.6em;
+    float: right;
+    line-height: 2.7em;
+}
+
+.nowrap{
+    white-space:nowrap;
+}
