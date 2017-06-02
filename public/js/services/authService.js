@@ -1,5 +1,5 @@
 angular.module('authService', [])
-  .service('Auth', ['$http', '$window', 'Users', function($http, $window, Users) {
+  .service('Auth', ['$window', 'Users', function($window, Users) {
 
     function saveToken(token) {
       $window.localStorage['token'] = token;
@@ -11,11 +11,10 @@ angular.module('authService', [])
 
     function isLoggedIn() {
       var token = getToken();
-      var payload;
 
       if (token) {
-        payload = token.split('.')[1];
-        payload = $window.atob(payload);
+        var payload = token.split('.')[1];
+        payload = unescape($window.atob(payload));
         payload = JSON.parse(payload);
 
         return payload.exp > Date.now();
@@ -28,7 +27,7 @@ angular.module('authService', [])
       if (isLoggedIn()) {
         var token = getToken();
         var payload = token.split('.')[1];
-        payload = $window.atob(payload);
+        payload = unescape($window.atob(payload));
         payload = JSON.parse(payload);
         return {
           username: payload.username

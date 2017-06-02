@@ -25,7 +25,7 @@ userSchema.methods.validPassword = function(password) {
 userSchema.methods.generateJwt = function() {
   return jwt.sign({
     _id: this._id,
-    username: unescape(encodeURIComponent(this.username)),
+    username: escape(this.username),
     exp: parseInt((Date.now() + 2 * 60 * 60 * 1000)), //token lifetime = 2hr
     // exp: parseInt((Date.now() + 10*1000)),
   }, require('./../../configuration').secretTokkenWord);
