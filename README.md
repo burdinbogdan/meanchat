@@ -24,4 +24,4 @@
 * переписать socketsService на конфигурируемый объект, чтобы он не взаимодействовал напрямую с другими сервисами.
 * дополнить и сервеную, и клиентскую валидацю.
 
-#### [Ссылка на Demo](http://chat-chat2.1d35.starter-us-east-1.openshiftapps.com/)
+#### [Ссылка на Demo](https://simplemeanchat.herokuapp.com/)
