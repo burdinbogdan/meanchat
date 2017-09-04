@@ -1,6 +1,6 @@
 // set up ========================
 
-var config = require('./configuration');
+var config = require('./app/server/configuration');
 var express = require('express');
 var http = require('http');
 var app = express();
@@ -27,11 +27,11 @@ var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
 
-require('./app/models/user')
-require('./app/config/passport');
+require('./app/server/models/user')
+require('./app/server/config/passport');
 
-require('./app/sockets')(io);
-require('./app/routes')(app, __dirname);
+require('./app/server/sockets')(io);
+require('./app/server/routes')(app, __dirname);
 
 
 // start app ======================================

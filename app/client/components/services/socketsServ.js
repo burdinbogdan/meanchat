@@ -1,4 +1,4 @@
-angular.module('socketsService', [])
+export default angular.module('socketsSer', [])
 	.service('Socket', ['$rootScope', '$location', '$anchorScroll', 'Chat', 'Auth',
 		function($rootScope, $location, $anchorScroll, Chat, Auth) {
 			var socket = io();
@@ -28,4 +28,4 @@ angular.module('socketsService', [])
 				}
 			}
 		}
-	]);
+	]).name;

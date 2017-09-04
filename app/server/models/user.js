@@ -28,7 +28,7 @@ userSchema.methods.generateJwt = function() {
     username: escape(this.username),
     exp: parseInt((Date.now() + 2 * 60 * 60 * 1000)), //token lifetime = 2hr
     // exp: parseInt((Date.now() + 10*1000)),
-  }, require('./../../configuration').secretTokkenWord);
+  }, require('./../configuration').secretTokkenWord);
 };
 
 userSchema.statics.getAll = function(cb) {

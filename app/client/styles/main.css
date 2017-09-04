@@ -22,14 +22,12 @@ html {
     height: 90%;
 }
 
-/* хром, сафари */
 .messagesArea::-webkit-scrollbar { width: 0; }
 
-/* ie 10+ */
-.messagesArea { -ms-overflow-style: none; }
-
-/* фф (свойство больше не работает, других способов тоже нет)*/
-.messagesArea { overflow: -moz-scrollbars-none; }
+.messagesArea { 
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
 
 .mes {
     display: inline-block;
@@ -102,4 +100,22 @@ p{
 
 .nowrap{
     white-space:nowrap;
+}
+
+.logouticon{
+    padding: 2px;
+    margin: 3px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #3e3e3e;
+}
+
+.logouticon:hover{
+    color: #111111;
+    text-decoration: none;
+    border-bottom: 1px solid black;    
+}
+
+#bottomAreaMessage{
+    height: 33px;
 }
