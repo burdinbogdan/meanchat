@@ -33,7 +33,7 @@
     "webpack": "^3.0.0"
   },
   "scripts": {
-    "postinstall": "bower install & webpack --env production",
+    "postinstall": "webpack --env production & bower install",
     "prestart": "npm install",
     "start": "node server.js",
 
